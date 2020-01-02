@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class="container" align="center">
+  <bgcolor="#b8822c" behavior="alternate"><h1>Resume</h1>
+  <div class="jumbotron">
+  <h1> Eagu Kumara Swamy </h1>
+  <h2> Python Developer </h2>
+  {% if per %}
+  <table>
+  <thead>
+  <th> content </th>
+  </thead>
+
+       {% for emp in per %}
+       <tr>
+        <td> {{emp.content}}</td>
+       </tr>
+        {% endfor %}
+          </table>
+         {%else%}
+           <p> No records found </p>
+           {% endif %}
+
+           {% if exp %}
+           <table>
+             <thead>
+              <th> jobtitle </th>
+              <th> summary </th>
+              </thead>
+
+             {% for emp in exp %}
+             <tr>
+              <td> {{emp.jobtitle}}</td>
+              <td> {{emp.summary}}</td>
+             </tr>
+                {% endfor %}
+                </table>
+               {%else%}
+                 <p> No records found </p>
+                 {% endif %}
+                 </div>
+                 </div>
+                 {% if Edu %}
+                 <table>
+                   <thead>
+                    <th> Qualification </th>
+                    <th> percentage </th>
+                    <th> college </th>
+
+                      </thead>
+
+                   {% for emp in Edu %}
+                   <tr>
+                    <td> {{emp.Qualification}}</td>
+                    <td> {{emp.percentage}}</td>
+                    <td> {{emp.college}}</td>
+                   </tr>
+                      {% endfor %}
+                      </table>
+                     {%else%}
+                       <p> No records found </p>
+                       {% endif %}
+
+                       {% if trin %}
+                       <table>
+                         <thead>
+                          <th> institute </th>
+                          <th> duration </th>
+                          <th> instructor</th>
+                            </thead>
+
+                         {% for emp in trin %}
+                         <tr>
+                          <td> {{emp.institute}}</td>
+                          <td> {{emp.duration}}</td>
+                          <td> {{emp.instructor}}</td>
+                         </tr>
+                            {% endfor %}
+                            </table>
+                           {%else%}
+                             <p> No records found </p>
+                             {% endif %}
+
+
+                             </body>
+
+</html>
